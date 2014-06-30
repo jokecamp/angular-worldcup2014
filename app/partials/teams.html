@@ -1,0 +1,37 @@
+<img src="img/ajax-loader.gif" ng-show="teams == null"  />
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Group</th>
+      <th>Rank</th>
+      <th>Pts</th>
+      <th><span title="Wins">W</span></th>
+      <th><span title="Losses">L</span></th>
+      <th><span title="Draws">D</span></th>
+      <th><span title="Goals For">GF</span></th>
+      <th><span title="Goals Against">GA</span></th>
+      <th><span title="Goal Difference">GD</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="t in teams | orderBy:['group','groupRank']" ng-class-odd="'odd'">
+      <td><a href="{{t.website}}" title='{{t.website}}'><img ng-src="{{t.logo}}" class="logo" /></a></td>
+
+      <td><a href='#/stats?team={{t.id}}'>{{t.name}}</a></td>
+      <td>Group {{t.group}}</td>
+
+      <td class='center'><span class='rank{{t.groupRank}}'>{{t.groupRank}}<span></td>
+      <td class='center'>{{t.groupPoints}}</td>
+      <td class='center'>{{t.wins}}</td>
+      <td class='center'>{{t.losses}}</td>
+      <td class='center'>{{t.draws}}</td>
+
+      <td class='center'>{{t.goalsFor}}</td>
+      <td class='center'>{{t.goalsAgainst}}</td>
+      <td class='center'>{{t.goalsDiff}}</td>
+
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,57 @@
+<div>
+  Filter: <input type="text" ng-model="query" />
+</div>
+
+<img src="img/ajax-loader.gif" ng-show="players == null"  />
+
+<p ng-show='players'>Total Players: {{players.length}}</p>
+
+<table ng-show='players'>
+  <thead>
+    <tr>
+      <th>Team</th>
+
+      <th>Name</th>
+      <th>Nickname</th>
+
+      <th>Position</th>
+      <th>Foot</th>
+
+      <th>Goals</th>
+      <th>Penalty <br>Goals</th>
+      <th>Own <br>Goals</th>
+
+      <th>Club</th>
+      <th>Club <br>Country</th>
+
+      <th>Age</th>
+      <th>Height (CM)</th>
+
+      <th>Birth City</th>
+      <th>Birth Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="p in players | orderBy:['team.name','position'] | filter:criteriaMatch()" ng-class-odd="'odd'">
+      <td>{{p.team.name}}</td>
+      <td><a ng-href='#/stats?player={{p.id}}'>{{p.firstName}} {{p.lastName}}</a></td>
+      <td>{{p.nickname}}</td>
+
+      <td>{{p.position}}</td>
+      <td>{{p.foot}}</td>
+
+      <td class='center'>{{p.goals | hideZeros}}</td>
+      <td class='center'>{{p.penaltyGoals | hideZeros}}</td>
+      <td class='center bad'>{{p.ownGoals | hideZeros}}</td>
+
+      <td>{{p.club.name}}</td>
+      <td>{{p.club.country}}</td>
+
+      <td class='center'>{{p.age}}</td>
+      <td class='center'>{{p.heightCm}}</td>
+
+      <td>{{p.birthCity}}</td>
+      <td>{{p.birthCountry}}</td>
+    </tr>
+  </tbody>
+</table>

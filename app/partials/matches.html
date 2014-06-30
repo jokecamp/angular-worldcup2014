@@ -1,0 +1,29 @@
+<img src="img/ajax-loader.gif" ng-show="matches == null"  />
+<p ng-show='matches'>Total Matches: {{matches.length}}</p>
+
+<table ng-show='matches'>
+  <thead>
+    <tr>
+      <th>Home</th>
+      <th>H</th>
+      <th></th>
+      <th>A</th>
+      <th>Away</th>
+      <th>Date/Time</th>
+      <th>Status</th>
+      <th>Venue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="m in matches | orderBy:'startTime' " ng-class-odd="'odd'">
+      <td>{{m.home.name}}</td>
+      <td>{{m.homeScore}}</td>
+      <td>-</td>
+      <td>{{m.awayScore}}</td>
+      <td>{{m.away.name}}</td>
+      <td>{{m.startTime | date:'short' }}</td>
+      <td>{{m.status}}</td>
+      <td>{{m.venue}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,32 @@
+
+
+#header { background-color:#005E11; color:#fff; padding:10px;}
+#header a { color:#FFF; text-decoration:none; }
+#header ul {  margin: 0; padding: 0; list-style-type: none; }
+#header ul li { display: inline; padding:10px; }
+
+.title { font-weight:bold; color:#EEE;}
+
+.main { padding:10px;}
+.content { padding:10px;}
+.footer { padding:20px; font-size:.8em; }
+
+img.logo { height:20px; width:20px; margin:4px; }
+tr.odd td { background-color:#E1EDE3; }
+
+table { padding:10px; }
+
+th, td { font-size:.75em; font-weight:normal; }
+th { background-color:#005E11; color:#FFF; padding:4px 10px;}
+td { border-bottom:solid 1px #CCC; padding:0 10px;  }
+
+
+.center { text-align:center; }
+.right { text-align:right; }
+.left { text-align:left; }
+
+.bad { color:#B32222; }
+
+.rank1, .rank2, .rank3, .rank4 { padding:4px; }
+.rank1, .rank2 { background-color:#12B515; color:#FFF; }
+.rank3, .rank4 { background-color:#B32222; color:#FFF; }

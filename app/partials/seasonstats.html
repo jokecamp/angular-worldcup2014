@@ -1,0 +1,47 @@
+<img src="img/ajax-loader.gif" ng-show="loading"  />
+<h3>{{player.firstName}} {{player.lastName}}</h3>
+<img ng-src="{{player.image}}" ng-show="player" />
+<table ng-show='players'>
+  <thead>
+    <tr>
+      <th>Season</th>
+      <th>League</th>
+
+      <th>Name</th>
+      <th>Team</th>
+      <th>Country</th>
+      <th>Goals</th>
+      <th>Apperances</th>
+      <th>Minutes Played</th>
+      <th>Sub In</th>
+      <th>Sub Out</th>
+      <th>Yellows</th>
+      <th>Reds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="p in players" ng-class-odd="'odd'">
+
+      <td>{{p.season}}</td>
+      <td>{{p.league}}</td>
+
+      <td>{{p.player.firstName}} {{p.player.lastName}}</td>
+      <td>{{p.club.name}}</td>
+      <td>{{p.club.country}}</td>
+
+      <td class='center'>{{p.goalsScored}}</td>
+      <td class='center'>{{p.appearances}}</td>
+      <td class='center'>{{p.minPlayed | number:0}}</td>
+
+      <td class='center'>{{p.subIn}}</td>
+      <td class='center'>{{p.subOut}}</td>
+      <td class='center'>{{p.yellowCards}}</td>
+      <td class='center'>{{p.redCards}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+    <img ng-src="{{team.logo}}" title="{{team.name}}" />
+    <img ng-repeat="m in members" ng-src="{{m.image}}" title="{{m.nickname}}" />
+</div>
